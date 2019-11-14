@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+.idea/
+
+db.sqlite3
+projeto6/settings.py
