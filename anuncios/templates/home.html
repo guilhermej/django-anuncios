@@ -1,13 +1,24 @@
-<html>
-<head>
+{% extends 'base.html' %}
+{% load static %}
 
-</head>
+{% block conteudo %}
 
-<body>
-<h1>Olá mundo</h1>
-<p>
-    Finalmente criei meu primeiro template
-</p>
-</body>
+<div class="ui three column stackable grid">
+    {% for anuncio in anuncios %}
+    <div class="column">
+        <div class="ui fluid card">
+            <div class="image">
+                <img src="{% static 'anuncios/img/image.png' %}">
+            </div>
+            <div class="content">
+                <a class="header">{{ anuncio }}</a>
+            </div>
+            <div class="extra content">
+                R$ {{ anuncio.preco }}
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
 
-</html>
+{% endblock %}
