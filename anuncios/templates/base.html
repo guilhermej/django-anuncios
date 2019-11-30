@@ -15,7 +15,7 @@
 
 <div class="ui attached menu">
     <div class="ui container">
-        <a class="item">Django Anúncios</a>
+        <a href="{% url 'home' %}" class="item">Django Anúncios</a>
         <div class="right menu">
             <div class="ui right aligned category search item">
                 <div class="ui transparent icon input">
@@ -35,17 +35,20 @@
         <div class="four wide column">
             <div class="ui vertical fluid menu">
                 {% for categoria in categorias %}
-                <a class="item">
+                <a href="{% url 'categoria' categoria.id %}" class="item">
                     {{ categoria }}
                 </a>
                 {% endfor %}
             </div>
         </div>
 
-        <div class="twelve wide column">
-            {% block conteudo %}
 
-            asdasdasdasdasdasdasdasd
+        <div class="twelve wide column">
+            {% if categoria %}
+                <h1>{{ categoria }}</h1>
+            {% endif %}
+
+            {% block conteudo %}
             {% endblock %}
         </div>
     </div>
