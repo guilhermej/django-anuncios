@@ -11,7 +11,7 @@
                 <img src="{% static 'anuncios/img/image.png' %}">
             </div>
             <div class="content">
-                <a class="header">{{ anuncio }}</a>
+                <a href="{% url 'anuncio' anuncio.id %}" class="header">{{ anuncio }}</a>
             </div>
             <div class="extra content">
                 R$ {{ anuncio.preco }}
